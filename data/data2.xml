@@ -1,0 +1,15 @@
+<MusicStreams>
+  <Streams>
+    <DeviceStream name="Youtube">
+      <AlbumStream>
+        <Samples>
+          <cd artist="Bob Dylan" title="Empire Burlesque" sequence="1" year="1985">10.90</cd>
+          <cd artist="Bonnie Tyler" title="Hide your heart" sequence="5" year="1988">9.90</cd>
+          <cd artist="Dolly Parton" title="Greatest Hits" sequence="4" year="1982">9.90</cd>
+          <cd artist="Garg Moore" title="Still got the blues" sequence="2" year="1990">10.20</cd>
+          <cd artist="Eros Ramazzotti" title="Eros" sequence="3" year="1997">9.90</cd>
+        </Samples>
+      </AlbumStream>
+    </DeviceStream>
+  </Streams>
+</MusicStreams>
