@@ -5,7 +5,6 @@ When the python script 'XMLDataPull.py' is run, it should:
 1. Create a SaxonC XSLT Processor
 1. Transform all the XML from 'Data' directory
 1. Output new XML in 'output' directory
-1. and Find any BOM from the source XML files
 
 However, the current code does not work with the SaxonC-HE 12.3.0 library. It returns the error
 
