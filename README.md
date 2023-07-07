@@ -20,3 +20,4 @@ Traceback (most recent call last):
   File "python_saxon\saxonc.pyx", line 1300, in saxonche.PyXslt30Processor.transform_to_file
 saxonche.PySaxonApiError: org.xml.sax.SAXParseException; systemId: file:///C:/Users/still/Documents/GitHub/SaxonXML/data; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.. Line number: -1
 ```
+This can be worked around by using the SaxonC-HE 12.0.0 library.
