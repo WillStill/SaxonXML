@@ -9,7 +9,7 @@ When the python script 'XMLDataPull.py' is run, it should:
 
 However, the current code does not work with the SaxonC-HE 12.3.0 library. It returns the error
 
-```python
+```
 Error on line 1 column 1 of data:
   SXXP0003   Error reported by XML parser: Content is not allowed in prolog.: Content is not
   allowed in prolog.
