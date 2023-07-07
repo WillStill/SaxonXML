@@ -11,6 +11,24 @@ with PySaxonProcessor(license=False) as proc:
 	result = "output"
 	output = xsltproc.transform_to_file(source_file=source, stylesheet_file=xslt, output_file=result)
 
+	#Find The BOM
+	for file in os.listdir(source):
+		with open("utf32le.file", "rb") as file:
+			beginning = file.read(4)
+			# The order of these if-statements is important
+			# otherwise UTF32 LE may be detected as UTF16 LE as well
+			if beginning == b'\x00\x00\xfe\xff':
+				print("UTF-32 BE")
+			elif beginning == b'\xff\xfe\x00\x00':
+				print("UTF-32 LE")
+			elif beginning[0:3] == b'\xef\xbb\xbf':
+				print("UTF-8")
+			elif beginning[0:2] == b'\xff\xfe':
+				print("UTF-16 LE")
+			elif beginning[0:2] == b'\xfe\xff':
+				print("UTF-16 BE")
+			else:
+				print("Unknown or no BOM")
 	for file in os.listdir(result):
 		if file.endswith(".xml"):
 			doc = open(f"{result}/{file}", encoding='utf-8').read()
