@@ -1,7 +1,8 @@
-import xml.dom.minidom
 import os
-from saxonche import PySaxonProcessor
+import xml.dom.minidom
+from pathlib import Path
 
+from saxonche import PySaxonProcessor
 
 with PySaxonProcessor(license=False) as proc:
 	print(proc.version)
@@ -9,7 +10,13 @@ with PySaxonProcessor(license=False) as proc:
 	source = "data"
 	xslt = "DataXSLT.xsl"
 	result = "output"
-	output = xsltproc.transform_to_file(source_file=source, stylesheet_file=xslt, output_file=result)
+	executable = xsltproc.compile_stylesheet(stylesheet_file=xslt)
+	print(type(executable))
+	# With compile_stylesheet() we get a PyXSLTExecutable object and can do more with that using advanced Saxon features
+	executable.set_initial_match_selection(file_name="data/data.xml")
+	# set a dummy file here, but it does have to be a well-formed XML document
+	executable.apply_templates_returning_value(base_output_uri=Path('.', result, 'output').absolute().as_uri())
+	# See examples at https://www.saxonica.com/saxon-c/documentation12/index.html#!samples/samples_python
 
 	for file in os.listdir(result):
 		if file.endswith(".xml"):
