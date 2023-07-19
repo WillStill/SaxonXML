@@ -46,4 +46,4 @@ executable.set_initial_match_selection(file_name="data/data.xml")
 executable.apply_templates_returning_value(base_output_uri=Path('.', result, 'output').absolute().as_uri())
 # See examples at https://www.saxonica.com/saxon-c/documentation12/index.html#!samples/samples_python
 ```
-This code also prevents a need for the XSLT to be changed, even how slightly it may need to be.
+This code also prevents a need for the XSLT to be changed.
