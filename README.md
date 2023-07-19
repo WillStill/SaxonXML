@@ -6,6 +6,8 @@ When the python script 'XMLDataPull.py' is run, it should:
 1. Transform all the XML from 'Data' directory
 1. Output new XML in 'output' directory
 
+## Error
+
 However, the current code does not work with the SaxonC-HE 12.3.0 library. It returns the error
 
 ```
